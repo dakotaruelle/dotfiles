@@ -1,4 +1,4 @@
-param([String] $installProfile="personal")
+param([String] $installProfile = "personal")
 
 Write-Output "--- Beginning install process ---"
 
@@ -38,3 +38,36 @@ Write-Output "--- Beginning install process ---"
 
 ## Install Nerd Font
 ## https://www.nerdfonts.com/font-downloads
+Write-Output "Checking for necessary font..."
+$FontFamilyName = "Heavy Data NF"
+$FontName = "Heavy Data Nerd Font Complete Windows Compatible.ttf"
+$FontUrl = "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/HeavyData.zip"
+$DownloadsFolderPath = "$HOME\Downloads\"
+$FontDownloadPath = $DownloadsFolderPath + $(Split-Path -Path $FontUrl -Leaf)
+$FontExtractPath = $DownloadsFolderPath + "UnzippedFontFiles\"
+$FontFilePath = $FontExtractPath + $FontName
+
+if (-not(Test-Path ("$($env:windir)\Fonts\" + $FontName))) {
+  Write-Output "Downloading font..."
+  Invoke-WebRequest -Uri $FontUrl -OutFile $FontDownloadPath
+  
+  Write-Output "Extracting font..."
+  Expand-Archive -Path $FontDownloadPath -DestinationPath $FontExtractPath -Force
+  
+  Write-Output "Installing font..."
+  
+  try { 
+    Copy-Item -Path $FontFilePath -Destination ("$($env:windir)\Fonts\" + $FontName) -Force 
+    New-ItemProperty -Name $FontName -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts" -PropertyType string -Value $FontName -Force -ErrorAction SilentlyContinue | Out-Null  
+  }
+  catch {            
+    write-host "Error installing font: $fontFile. " $_.exception.message
+  }
+}
+else {
+  Write-Output ($FontFamilyName + " is already installed")
+}
+
+
+    
+
