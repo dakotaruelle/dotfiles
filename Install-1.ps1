@@ -39,9 +39,9 @@ Write-Output "--- Beginning install process ---"
 ## Install Nerd Font
 ## https://www.nerdfonts.com/font-downloads
 Write-Output "Checking for necessary font..."
-$FontFamilyName = "Heavy Data NF"
-$FontName = "Heavy Data Nerd Font Complete Windows Compatible.ttf"
-$FontUrl = "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/HeavyData.zip"
+$FontFamilyName = "Hurmit NF"
+$FontName = "Hurmit Bold Nerd Font Complete Windows Compatible.otf"
+$FontUrl = "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hermit.zip"
 $DownloadsFolderPath = "$HOME\Downloads\"
 $FontDownloadPath = $DownloadsFolderPath + $(Split-Path -Path $FontUrl -Leaf)
 $FontExtractPath = $DownloadsFolderPath + "UnzippedFontFiles\"
