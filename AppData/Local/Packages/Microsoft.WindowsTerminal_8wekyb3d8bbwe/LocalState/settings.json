@@ -16,10 +16,9 @@
         "hidden": false,
         "name": "PowerShell Core",
         "source": "Windows.Terminal.PowershellCore",
-        "colorScheme": "CondensedGit",
         "useAcrylic": true,
         "acrylicOpacity": 0.8,
-        "fontFace": "MesloLGS NF"
+        "fontFace": "Hurmit NF"
       },
       {
         "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -44,69 +43,5 @@
     // To unbind a default keybinding, set the command to "unbound"
     "keybindings": [],
     // Add custom color schemes to this array 
-    "schemes": [
-      {
-        "name": "CondensedGit",
-        "foreground": "#F8F8F2",
-        "background": "#151718",
-        "black": "#151718",
-        "brightBlack": "#625e4c",
-        "blue": "#FA8419",
-        "brightBlue": "#FA8419",
-        "cyan": "#297ae5",
-        "brightCyan": "#297ae5",
-        "green": "#98F424",
-        "brightGreen": "#98F424",
-        "purple": "#F4005F",
-        "brightPurple": "#F4005F",
-        "red": "#F4005F",
-        "brightRed": "#F4005F",
-        "white": "#F8F8F2",
-        "brightWhite": "#f6f6ef",
-        "yellow": "#3d8ae2",
-        "brightYellow": "#3d8ae2"
-      },
-      {
-        "name": "Monokai Seti Dark",
-        "foreground": "#F8F8F2",
-        "background": "#151718",
-        "black": "#151718",
-        "brightBlack": "#625e4c",
-        "blue": "#1666ce",
-        "brightBlue": "#1666ce",
-        "cyan": "#297ae5",
-        "brightCyan": "#297ae5",
-        "green": "#98F424",
-        "brightGreen": "#98F424",
-        "purple": "#CA5BC8",
-        "brightPurple": "#CA5BC8",
-        "red": "#F4005F",
-        "brightRed": "#F4005F",
-        "white": "#F8F8F2",
-        "brightWhite": "#f6f6ef",
-        "yellow": "#FA8419",
-        "brightYellow": "#FA8419"
-      },
-      {
-        "name": "VS Code",
-        "background": "#232323",
-        "black": "#000000",
-        "blue": "#579BD5",
-        "brightBlack": "#797979",
-        "brightBlue": "#9BDBFE",
-        "brightCyan": "#2BC4E2",
-        "brightGreen": "#1AD69C",
-        "brightPurple": "#DF89DD",
-        "brightRed": "#F6645D",
-        "brightWhite": "#EAEAEA",
-        "brightYellow": "#F6F353",
-        "cyan": "#00B6D6",
-        "foreground": "#D3D3D3",
-        "green": "#3FC48A",
-        "purple": "#CA5BC8",
-        "red": "#D8473F",
-        "white": "#EAEAEA",
-        "yellow": "#D7BA7D"
-      }
-    ]
+    "schemes": []
   }
