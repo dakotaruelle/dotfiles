@@ -12,11 +12,16 @@ sudo apt upgrade -y
 
 # Install Packages
 echo "Installing packages..."
-sudo apt install gcc -y
-sudo apt install zsh -y
+sudo apt install gcc zsh -y
 sudo chsh -s $(which zsh)
 
 ####   Exit and Restart Shell   ####
+
+# Install chezmoi
+echo "Installing chezmoi..."
+sh -c "$(curl -fsLS chezmoi.io/get)"
+bin/chezmoi init --apply https://github.com/dakotaruelle/dotfiles.git
+
 
 echo "Checking for HomeBrew installation..."
 if [ -d ~/.linuxbrew ]; then
