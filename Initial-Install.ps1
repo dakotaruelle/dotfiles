@@ -59,7 +59,7 @@ function Install-Font {
   }
 }
 
-echo "Installing font family MesloLGS NF"
+Write-Output "Installing font family MesloLGS NF"
 Install-Font -FontName "Meslo LG S Regular Nerd Font Complete Windows Compatible.ttf"
 Install-Font -FontName "Meslo LG S Italic Nerd Font Complete Windows Compatible.ttf"
 Install-Font -FontName "Meslo LG S Bold Nerd Font Complete Windows Compatible.ttf"
