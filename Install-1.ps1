@@ -38,36 +38,32 @@ Write-Output "--- Beginning install process ---"
 
 ## Install Nerd Font
 ## https://www.nerdfonts.com/font-downloads
-Write-Output "Checking for necessary font..."
-$FontFamilyName = "Hurmit NF"
-$FontName = "Hurmit Bold Nerd Font Complete Windows Compatible.otf"
-$FontUrl = "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hermit.zip"
-$DownloadsFolderPath = "$HOME\Downloads\"
-$FontDownloadPath = $DownloadsFolderPath + $(Split-Path -Path $FontUrl -Leaf)
-$FontExtractPath = $DownloadsFolderPath + "UnzippedFontFiles\"
-$FontFilePath = $FontExtractPath + $FontName
+Write-Output "Verifying fonts..."
 
-if (-not(Test-Path ("$($env:windir)\Fonts\" + $FontName))) {
-  Write-Output "Downloading font..."
-  Invoke-WebRequest -Uri $FontUrl -OutFile $FontDownloadPath
-  
-  Write-Output "Extracting font..."
-  Expand-Archive -Path $FontDownloadPath -DestinationPath $FontExtractPath -Force
-  
-  Write-Output "Installing font..."
-  
-  try { 
-    Copy-Item -Path $FontFilePath -Destination ("$($env:windir)\Fonts\" + $FontName) -Force 
-    New-ItemProperty -Name $FontName -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts" -PropertyType string -Value $FontName -Force -ErrorAction SilentlyContinue | Out-Null  
-  }
-  catch {            
-    write-host "Error installing font: $fontFile. " $_.exception.message
-  }
-}
-else {
-  Write-Output ($FontFamilyName + " is already installed")
-}
+function Install-Font {
+  param (
+    $FontName
+  )
 
-
+  if (-not(Test-Path ("$($env:windir)\Fonts\" + $FontName))) {
+    Write-Output "Installing font"
     
+    try { 
+      Copy-Item -Path $HOME\.fonts\$FontName -Destination ("$($env:windir)\Fonts\" + $FontName) -Force 
+      New-ItemProperty -Name $FontName -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts" -PropertyType string -Value $FontName -Force -ErrorAction SilentlyContinue | Out-Null  
+    }
+    catch {            
+      Write-Host "Error installing font: $FontName. " $_.exception.message
+    }
+  }
+  else {
+    Write-Output ($FontName + " is already installed")
+  }
+}
+
+echo "Installing font family MesloLGS NF"
+Install-Font -FontName "Meslo LG S Regular Nerd Font Complete Windows Compatible.ttf"
+Install-Font -FontName "Meslo LG S Italic Nerd Font Complete Windows Compatible.ttf"
+Install-Font -FontName "Meslo LG S Bold Nerd Font Complete Windows Compatible.ttf"
+Install-Font -FontName "Meslo LG S Bold Italic Nerd Font Complete Windows Compatible.ttf"
 
