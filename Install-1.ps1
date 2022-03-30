@@ -6,7 +6,8 @@ Write-Output "--- Beginning install process ---"
 # Set-ExecutionPolicy RemoteSigned
 
 ### Install all programs
-# winget install
+Write-Output "Installing programs..."
+winget import --import-file ./winget-packages.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements --verbose-logs
 
 ### install wsl
 # wsl --install
