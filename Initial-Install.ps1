@@ -2,9 +2,6 @@ param([String] $installProfile = "personal")
 
 Write-Output "--- Beginning install process ---"
 
-# Write-Output "Enabling execution of Powershell scripts"
-# Set-ExecutionPolicy RemoteSigned
-
 ### Install all programs
 Write-Output "Installing programs..."
 winget import --import-file ./winget-packages.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements --verbose-logs
