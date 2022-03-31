@@ -56,3 +56,7 @@ chezmoi init --apply git@github.com:dakotaruelle/dotfiles.git
 
 ### Create "repos" directory
 mkdir repos
+
+### Configure git
+Write-Output "Configuring git..."
+git config --global user.name "Dakota Ruelle"
