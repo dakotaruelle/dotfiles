@@ -51,9 +51,6 @@ Install-Font -FontName "Meslo LG S Bold Italic Nerd Font Complete Windows Compat
 choco install chezmoi
 chezmoi init --apply git@github.com:dakotaruelle/dotfiles.git
 
-### Customize taskbar 
-# Import-StartLayout -LayoutPath "taskbar-layout.xml" -MountPath "C:\"
-
 ### Create "repos" directory
 mkdir repos
 
