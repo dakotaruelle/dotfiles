@@ -38,7 +38,7 @@
           "PackageIdentifier": "Insomnia.Insomnia"
         },
         {
-          "PackageIdentifier": "OpenJS.NodeJS"
+          "PackageIdentifier": "OpenJS.NodeJS.LTS"
         },
         {
           "PackageIdentifier": "Microsoft.AzureDataStudio"
