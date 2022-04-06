@@ -11,6 +11,14 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 Write-Output "Installing programs..."
 winget import --import-file ./winget-packages.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements --verbose-logs
 
+### Install Flutter
+$FlutterDownloadUrl = "https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_2.10.4-stable.zip"
+$FlutterDownloadPath = "$HOME\Downloads\flutter.zip"
+$FlutterInstallPath = "$HOME\bin"
+Invoke-WebRequest -Uri $FlutterDownloadUrl -OutFile $FlutterDownloadPath
+Expand-Archive -Path $FlutterDownloadPath -DestinationPath $FlutterInstallPath -Force
+[Environment]::SetEnvironmentVariable("PATH", $Env:PATH + “;$HOME\bin\flutter\bin”, [EnvironmentVariableTarget]::Machine)
+
 ### Set the timezone
 tzutil /s "Central Standard Time"
 

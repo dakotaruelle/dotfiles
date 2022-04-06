@@ -9,6 +9,13 @@ sudo apt upgrade -y
 echo "Installing packages..."
 sudo apt install gcc zsh -y
 
+### Install nvm and node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm install --lts
+
 ### Configure zsh
 echo "Setting zsh as default shell..."
 sudo chsh -s $(which zsh)
