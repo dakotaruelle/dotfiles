@@ -54,6 +54,9 @@
         },
         {
           "PackageIdentifier": "Google.AndroidStudio"
+        },
+        {
+          "PackageIdentifier": " Microsoft.ASPNetCore.6-x64"
         }
       ],
       "SourceDetails": {
