@@ -19,6 +19,9 @@ Invoke-WebRequest -Uri $FlutterDownloadUrl -OutFile $FlutterDownloadPath
 Expand-Archive -Path $FlutterDownloadPath -DestinationPath $FlutterInstallPath -Force
 [Environment]::SetEnvironmentVariable("PATH", $Env:PATH + “;$HOME\bin\flutter\bin”, [EnvironmentVariableTarget]::Machine)
 
+### Install global node packages
+npm install --global yarn pnpm
+
 ### Set the timezone
 tzutil /s "Central Standard Time"
 

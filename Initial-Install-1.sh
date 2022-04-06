@@ -16,6 +16,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 nvm install --lts
 
+### Install global node packages
+npm install --global yarn pnpm
+
 ### Configure zsh
 echo "Setting zsh as default shell..."
 sudo chsh -s $(which zsh)
