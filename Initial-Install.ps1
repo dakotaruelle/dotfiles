@@ -17,10 +17,16 @@ $FlutterDownloadPath = "$HOME\Downloads\flutter.zip"
 $FlutterInstallPath = "$HOME\bin"
 Invoke-WebRequest -Uri $FlutterDownloadUrl -OutFile $FlutterDownloadPath
 Expand-Archive -Path $FlutterDownloadPath -DestinationPath $FlutterInstallPath -Force
-[Environment]::SetEnvironmentVariable("PATH", $Env:PATH + “;$HOME\bin\flutter\bin”, [EnvironmentVariableTarget]::Machine)
 
 ### Install global node packages
 npm install --global yarn pnpm
+
+### Set environment variables
+[Environment]::SetEnvironmentVariable("ANDROID_HOME", $Env:PATH + “;$HOME\AppData\Local\Android\Sdk”, [EnvironmentVariableTarget]::Machine)
+
+### Update PATH
+[Environment]::SetEnvironmentVariable("PATH", $Env:PATH + “;$HOME\bin\flutter\bin”, [EnvironmentVariableTarget]::Machine)
+[Environment]::SetEnvironmentVariable("PATH", $Env:PATH + “;$HOME\AppData\Local\Android\Sdk\platform-tools”, [EnvironmentVariableTarget]::Machine)
 
 ### Set the timezone
 tzutil /s "Central Standard Time"
