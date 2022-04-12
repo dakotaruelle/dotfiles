@@ -57,6 +57,9 @@
         },
         {
           "PackageIdentifier": " Microsoft.ASPNetCore.6-x64"
+        },
+        {
+          "PackageIdentifier": "Microsoft.OpenJDK.17"
         }
       ],
       "SourceDetails": {
