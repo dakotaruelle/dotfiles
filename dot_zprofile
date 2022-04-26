@@ -1,1 +1,5 @@
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#
+# ~/.z_profile
+#
+
+[[ -f ~/.zshrc ]] && . ~/.zshrc

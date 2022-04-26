@@ -1,4 +1,14 @@
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.config.json)"
 
 ###   Add to PATH   ###
-export PATH="$HOME/bin:$PATH"
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.nvm/versions/node/v16.14.2/bin/node:$PATH
+
+### Add ENV variables ###
+export NVM_DIR="$HOME/.nvm"
+
+### Setup nvm ###
+source /usr/share/nvm/init-nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
