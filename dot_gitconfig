@@ -2,3 +2,5 @@
 	name = Dakota Ruelle
 [core]
 	editor = code --wait
+[alias]
+  ch = checkout
