@@ -3,3 +3,4 @@
 #
 
 source $HOME/.zshrc
+eval "$(oh-my-posh init bash)"
