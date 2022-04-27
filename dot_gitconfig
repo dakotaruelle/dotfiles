@@ -4,3 +4,4 @@
 	editor = code --wait
 [alias]
   ch = checkout
+  nb = checkout -b
