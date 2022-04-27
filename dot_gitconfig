@@ -5,3 +5,4 @@
 [alias]
   ch = checkout
   nb = checkout -b
+  s = status
