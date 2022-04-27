@@ -3,17 +3,19 @@ eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.config.json)"
 
 ###   Add to PATH   ###
 export PATH=$HOME/bin:$PATH
+{{ if eq .chezmoi.os "linux" }}
 export PATH=$HOME/.nvm/versions/node/v16.14.2/bin/node:$PATH
+{{ end }}
 
 ### Add ENV variables ###
 export NVM_DIR="$HOME/.nvm"
 
 ### Setup nvm ###
+{{ if eq .chezmoi.os "linux" }}
 {{ if eq .chezmoi.osRelease.id "manjaro" }}
 source /usr/share/nvm/init-nvm.sh
 {{ end }}
 
-{{ if eq .chezmoi.os "linux" }}
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 {{ end }}
