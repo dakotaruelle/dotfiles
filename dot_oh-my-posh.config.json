@@ -63,21 +63,6 @@
           "type": "python"
         },
         {
-          "foreground_templates": [
-            "{{if eq \"Charging\" .State.String}}#4caf50{{end}}",
-            "{{if eq \"Discharging\" .State.String}}#40c4ff{{end}}",
-            "{{if eq \"Full\" .State.String}}#ff0000{{end}}"
-          ],
-          "invert_powerline": true,
-          "properties": {
-            "charged_icon": "\uf00d ",
-            "charging_icon": "\ue234 "
-          },
-          "style": "powerline",
-          "template": "| {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }} \uf295 ",
-          "type": "battery"
-        },
-        {
           "foreground": "lightGreen",
           "style": "plain",
           "template": "| {{ .CurrentDate | date .Format }} ",
