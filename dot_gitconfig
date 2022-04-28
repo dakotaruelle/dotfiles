@@ -4,9 +4,12 @@
 	editor = code --wait
 [alias]
   ch = checkout
-  nb = checkout -b
+  nb = checkout --branch
   s = status
-  A = add -A
-  c = commit -m
+  A = add --all
+  c = commit --message
   sq = commit --amend --no-edit
   amend = commit --amend
+  rbi = rebase --interactive
+  rbc = rebase --continue
+  rba = rebase --abort
