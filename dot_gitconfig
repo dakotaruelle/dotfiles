@@ -8,3 +8,4 @@
   s = status
   sq = commit --amend --no-edit
   amend = commit --amend
+  A = add -A
