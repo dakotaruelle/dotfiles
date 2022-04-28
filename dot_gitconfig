@@ -6,3 +6,5 @@
   ch = checkout
   nb = checkout -b
   s = status
+  sq = commit --amend --no-edit
+  amend = commit --amend
