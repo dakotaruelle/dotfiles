@@ -4,7 +4,7 @@
 	editor = code --wait
 [alias]
   ch = checkout
-  nb = checkout --branch
+  nb = checkout -b
   s = status
   A = add --all
   c = commit --message
