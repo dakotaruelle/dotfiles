@@ -13,3 +13,4 @@
   rbi = rebase --interactive
   rbc = rebase --continue
   rba = rebase --abort
+  stashes = stash list
