@@ -14,3 +14,4 @@
   rbc = rebase --continue
   rba = rebase --abort
   stashes = stash list
+  pf = push --force
