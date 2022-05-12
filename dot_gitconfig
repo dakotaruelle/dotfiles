@@ -10,6 +10,7 @@
   c = commit --message
   sq = commit --amend --no-edit
   amend = commit --amend
+  rb = rebase
   rbi = rebase --interactive
   rbc = rebase --continue
   rba = rebase --abort
