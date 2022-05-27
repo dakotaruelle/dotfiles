@@ -16,3 +16,5 @@
   rba = rebase --abort
   stashes = stash list
   pf = push --force
+[pull]
+	rebase = true
