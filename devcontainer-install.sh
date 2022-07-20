@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mv -f $HOME/dotfiles/* $HOME/
+
 # Install chezmoi
 sh -c "$(curl -fsLS chezmoi.io/get)"
 
