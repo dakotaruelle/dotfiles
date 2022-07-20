@@ -24,3 +24,7 @@ source /usr/share/nvm/init-nvm.sh
 {{ if eq .name "work-computer" }}
 [[ -f ~/.zshrc-work ]] && . ~/.zshrc-work
 {{ end }}
+
+### Register zsh completions ###
+mkdir -p ${ZDOTDIR:-~}/.zsh_functions
+fpath+=${ZDOTDIR:-~}/.zsh_functions
