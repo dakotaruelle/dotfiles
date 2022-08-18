@@ -1,9 +1,12 @@
+{{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
+{{ if eq .chezmoi.osRelease.name "Ubuntu" -}}
 printf "\n\n   ---Updating all apt packages---   \n\n"
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove
+{{ end -}}
 
 printf "\n\n   ---Updating all snap packages---   \n\n"
 sudo snap refresh
@@ -11,3 +14,5 @@ sudo snap refresh
 printf "\n\n   ---Updating all homebrew packages---   \n\n"
 brew update
 brew upgrade
+
+{{ end -}}
