@@ -8,8 +8,10 @@ sudo apt upgrade -y
 sudo apt autoremove
 {{ end -}}
 
+{{ if not (contains "WSL2" .chezmoi.kernel.osrelease) -}}
 printf "\n\n   ---Updating all snap packages---   \n\n"
 sudo snap refresh
+{{ end -}}
 
 printf "\n\n   ---Updating all homebrew packages---   \n\n"
 brew update
