@@ -1,95 +1,89 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "foreground": "cyan",
+          "type": "os",
           "style": "powerline",
-          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
-          "type": "os"
+          "foreground": "default",
+          "foreground_templates": [
+            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#ffad66{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
+          ],
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}"
         },
         {
-          "foreground": "cyan",
+          "type": "path",
+          "style": "plain",
+          "foreground": "default",
+          "foreground_templates": [
+            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#ffad66{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
+          ],
           "properties": {
             "style": "full"
           },
-          "style": "plain",
-          "template": " {{ .Path }} ",
-          "type": "path"
+          "template": " {{ .Path }} "
         },
         {
-          "foreground": "#F1502F",
-          "properties": {
-            "fetch_status": true
-          },
+          "type": "git",
           "style": "plain",
-          "template": ":: {{ .HEAD }}{{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }} ",
-          "type": "git"
+          "foreground": "default",
+          "foreground_templates": [
+            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#ffad66{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
+          ],
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "right",
       "segments": [
         {
-          "foreground": "red",
+          "type": "node",
           "style": "plain",
-          "template": "| root ",
-          "type": "root"
-        },
-        {
-          "foreground": "#06A4CE",
-          "style": "powerline",
-          "template": "| \ue798 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "type": "dart"
-        },
-        {
-          "foreground": "#6CA35E",
-          "style": "powerline",
-          "template": "| \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
-          "type": "node"
-        },
-        {
-          "foreground": "#4584b6",
-          "properties": {
-            "display_mode": "context",
-            "fetch_virtual_env": true
-          },
-          "style": "plain",
-          "template": "| \ue235 {{ .Venv }} ",
-          "type": "python"
-        },
-        {
-          "foreground": "lightGreen",
-          "style": "plain",
-          "template": "| {{ .CurrentDate | date .Format }} ",
-          "type": "time"
+          "foreground": "default",
+          "foreground_templates": [
+            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#ffad66{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
+          ],
+          "template": " \uE718 {{ .Full }} "
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "left",
       "newline": true,
       "segments": [
         {
-          "foreground": "lightGreen",
+          "foreground": "default",
           "foreground_templates": [
-            "{{ if gt .Code 0 }}red{{ end }}"
+            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#ffad66{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
           ],
-          "properties": {
-            "always_enabled": true
-          },
-          "style": "powerline",
-          "template": "\u279c ",
-          "type": "exit"
+          "style": "plain",
+          "template": "\ue3bf ",
+          "type": "root"
+        },
+        {
+          "foreground": "default",
+          "foreground_templates": [
+            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#ffad66{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
+          ],
+          "style": "plain",
+          "template": "> ",
+          "type": "text"
         }
-      ],
-      "type": "prompt"
+      ]
     }
-  ],
-  "version": 2
+  ]
 }
