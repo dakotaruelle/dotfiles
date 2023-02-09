@@ -18,3 +18,5 @@
   pf = push --force
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
