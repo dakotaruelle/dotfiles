@@ -3,3 +3,7 @@ winget-packages.json
 AppData/Roaming/Hyper/.hyper.js
 {{ end }}
 
+{{ if ne .chezmoi.os "linux" -}}
+.hyper.js
+{{ end }}
+
