@@ -8,5 +8,6 @@ AppData
 
 {{ if ne .chezmoi.os "linux" -}}
 .hyper.js
+.hyper_plugins
 {{ end }}
 
