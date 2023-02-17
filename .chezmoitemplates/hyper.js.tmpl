@@ -75,25 +75,11 @@ module.exports = {
       limeGreen: '#32CD32',
       lightCoral: '#F08080',
     },
-    // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
-    // if left empty, your system's login shell will be used by default
-    //
-    // Windows
-    // - Make sure to use a full path if the binary name doesn't work
-    // - Remove `--login` in shellArgs
-    //
-    // Windows Subsystem for Linux (WSL) - previously Bash on Windows
-    // - Example: `C:\\Windows\\System32\\wsl.exe`
-    //
-    // Git-bash on Windows
-    // - Example: `C:\\Program Files\\Git\\bin\\bash.exe`
-    //
-    // PowerShell on Windows
-    // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    //
-    // Cygwin
-    // - Example: `C:\\cygwin64\\bin\\bash.exe`
+    {{ if eq .chezmoi.os "windows" -}}
+    shell: 'C:\\Program Files\\PowerShell\\7\\pwsh.exe',
+    {{ else }}
     shell: '',
+    {{ end }}
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
     shellArgs: ['--login'],
