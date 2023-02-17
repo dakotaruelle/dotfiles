@@ -1,6 +1,7 @@
+initial-install
+
 {{ if ne .chezmoi.os "windows" -}}
 winget-packages.json
-
 AppData
 {{ end }}
 
