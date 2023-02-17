@@ -1,5 +1,8 @@
 {{ if ne .chezmoi.os "windows" -}}
 winget-packages.json
+
+AppData/Roaming
+AppData/Roaming/Hyper
 AppData/Roaming/Hyper/.hyper.js
 {{ end }}
 
