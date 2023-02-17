@@ -5,7 +5,7 @@
 printf "\n\n   ---Updating all apt packages---   \n\n"
 sudo apt update
 sudo apt upgrade -y
-sudo apt autoremove
+sudo apt autoremove -y
 {{ end -}}
 
 {{ if not (contains "WSL2" .chezmoi.kernel.osrelease) -}}
