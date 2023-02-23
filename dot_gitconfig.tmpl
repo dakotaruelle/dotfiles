@@ -1,7 +1,12 @@
 [user]
 	name = Dakota Ruelle
 [core]
-	editor = code --wait
+{{ if (and (eq .chezmoi.os "linux") (eq .name "work-computer")) }}
+  editor = webstorm --wait
+{{ else }}
+  editor = code --wait
+{{ end }}
+	
 [alias]
   ch = checkout
   nb = checkout -b
