@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=WebStorm 2022.3.2
+Name=WebStorm 2022.3.4
 Icon=/home/dakota/.icons/MyIcons/apps/scalable/webstorm.svg
 StartupWMClass=jetbrains-webstorm
 Comment=A JavaScript IDE
-Exec="/home/dakota/.local/share/JetBrains/Toolbox/apps/WebStorm/ch-0/223.8617.44/bin/webstorm.sh" %u
+Exec="/home/dakota/.local/share/JetBrains/Toolbox/apps/WebStorm/ch-0/223.8836.50/bin/webstorm.sh" %u
 Version=1.0
 Type=Application
 Categories=Development;IDE;
