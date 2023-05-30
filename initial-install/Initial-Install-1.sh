@@ -10,12 +10,12 @@ sudo apt upgrade -y
 
 ## Install Packages
 printf "\n-----  Installing new packages...  -----\n"
-sudo apt install git gcc build-essential libssl-dev curl -y
+sudo apt install git gcc build-essential libssl-dev curl zsh -y
 
 ### Install oh-my-zsh
-if ( which zsh )
+if ( test -d $HOME/.oh-my-zsh )
 then
-  printf "\n-----  zsh already installed  -----\n"
+  printf "\n-----  oh-my-zsh already installed  -----\n"
 else
   printf "\n-----  Installing oh-my-zsh...  -----\n"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

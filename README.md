@@ -1,20 +1,36 @@
 # Setup and Configuration
 
-## Windows
+## Ubuntu
+
+### Initial Setup
 
 1. Download this repo
 2. Add .ssh folder and keys
-3. Run this command `Set-ExecutionPolicy RemoteSigned`
-4. Run Initial-Install.ps1
-5. Run Ubuntu app and go through initial setup prompts
-6. Restart Windows Terminal
+3. Run `bash initial-install/Initial-Install-1.sh`
+4. Restart the shell (for newly installed tools/apps)
+5. Run `bash initial-install/Initial-Install-2.sh`
+6. Logout and log back in (for default shell to change)
+7. Create a chezmoi config file at `~/.config/chezmoi/chezmoi.yaml` 
 
-### WSL
-1. Follow above Windows instructions
-2. Copy Initial-Install-1.sh and Initial-Install-2.sh to home directory
-3. Run this command `/bin/bash Initial-Install-1.sh`
-4. Restart shell
-5. Add .ssh folder and keys
-6. Run this command `/usr/bin/zsh Initial-Install-2.sh`
+    (for example)
+   
+       edit:
+        command: code
 
-## Ubuntu
+       git:
+         autoCommit: true
+         autoPush: true
+
+       data:
+         name: work-computer
+
+8. Run the command `bin/chezmoi init --apply dakotaruelle`
+
+### Normal Usage
+
+Run the command `chezmoi update`. This will
+
+- Update any dotfiles/config files
+- Update all apt packages
+- Update all snap packages
+- Update all homebrew packages
