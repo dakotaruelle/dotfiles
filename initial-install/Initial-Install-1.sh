@@ -10,7 +10,7 @@ sudo apt upgrade -y
 
 ## Install Packages
 printf "\n-----  Installing new packages...  -----\n"
-sudo apt install git gcc build-essential libssl-dev curl zsh -y
+sudo apt install git gcc build-essential libssl-dev curl zsh flameshot -y
 
 ### Install oh-my-zsh
 if ( test -d $HOME/.oh-my-zsh )

@@ -26,6 +26,9 @@
 
 8. Run the command `bin/chezmoi init --apply dakotaruelle`
 
+### Additional setup
+- Install Hyper terminal
+
 ### Normal Usage
 
 Run the command `chezmoi update`. This will
