@@ -21,6 +21,8 @@ source /usr/share/nvm/init-nvm.sh
 {{ end }}
 
 ### Aliases ###
+alias list-packages="apt list --installed"
+
 {{ if eq .name "work-computer" }}
 [[ -f ~/.zshrc-work ]] && . ~/.zshrc-work
 {{ end }}
