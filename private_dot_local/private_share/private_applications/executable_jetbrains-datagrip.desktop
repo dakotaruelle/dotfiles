@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=DataGrip 2023.2
-Icon=datagrip
-StartupWMClass=jetbrains-datagrip
-Comment=The IDE for databases and SQL
-Exec="/home/dakota/.local/share/JetBrains/Toolbox/apps/datagrip/ch-0/232.8660.111/bin/datagrip.sh" %u
+Name=DataGrip 2023.2.1
+Exec="/home/dakota/.local/share/JetBrains/Toolbox/apps/datagrip-2/bin/datagrip.sh" %u
 Version=1.0
 Type=Application
 Categories=Development;IDE;
 Terminal=false
+Icon=jetbrains-datagrip
+Comment=The IDE for databases and SQL
+StartupWMClass=jetbrains-datagrip
 StartupNotify=true
