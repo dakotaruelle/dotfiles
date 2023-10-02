@@ -1,20 +1,25 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
-{{ if eq .chezmoi.osRelease.name "Ubuntu" -}}
-printf "\n\n   ---Updating all apt packages---   \n\n"
-sudo apt update
-sudo apt upgrade -y
-sudo apt autoremove -y
-{{ end -}}
+read -p "Update packages (y/n)? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    {{ if eq .chezmoi.osRelease.name "Ubuntu" -}}
+    printf "\n\n   ---Updating all apt packages---   \n\n"
+    sudo apt update
+    sudo apt upgrade -y
+    sudo apt autoremove -y
+    {{ end -}}
 
-{{ if not (contains "WSL2" .chezmoi.kernel.osrelease) -}}
-printf "\n\n   ---Updating all snap packages---   \n\n"
-sudo snap refresh
-{{ end -}}
+    {{ if not (contains "WSL2" .chezmoi.kernel.osrelease) -}}
+    printf "\n\n   ---Updating all snap packages---   \n\n"
+    sudo snap refresh
+    {{ end -}}
 
-printf "\n\n   ---Updating all homebrew packages---   \n\n"
-brew update
-brew upgrade
+    printf "\n\n   ---Updating all homebrew packages---   \n\n"
+    brew update
+    brew upgrade
+fi
 
 {{ end -}}
