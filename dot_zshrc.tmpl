@@ -12,9 +12,6 @@ export NVM_DIR="$HOME/.nvm"
 
 ### Setup nvm ###
 {{ if eq .chezmoi.os "linux" }}
-{{ if eq .chezmoi.osRelease.id "manjaro" }}
-source /usr/share/nvm/init-nvm.sh
-{{ end }}
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -22,6 +19,8 @@ source /usr/share/nvm/init-nvm.sh
 
 ### Aliases ###
 alias list-packages="apt list --installed"
+alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
 
 {{ if eq .name "work-computer" }}
 [[ -f ~/.zshrc-work ]] && . ~/.zshrc-work
