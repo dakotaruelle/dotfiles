@@ -1,6 +1,12 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
+### Gnome things ###
+{{ if eq .chezmoi.osRelease.name "Ubuntu" }}
+gsettings set org.gnome.nautilus.preferences show-hidden-files true
+gsettings set org.gnome.desktop.interface icon-theme 'my-icons'
+{{ end }}
+
 echo
 read -p "Update packages (y/n)? " -n 1 -r
 echo    # (optional) move to a new line

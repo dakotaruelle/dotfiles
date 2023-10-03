@@ -31,8 +31,3 @@ alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer
 ### Register zsh completions ###
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-### Gnome things ###
-{{ if eq .chezmoi.osRelease.name "Ubuntu" }}
-gsettings set org.gnome.nautilus.preferences show-hidden-files true
-{{ end }}
