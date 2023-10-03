@@ -5,7 +5,7 @@
 {{ if eq .chezmoi.osRelease.name "Ubuntu" }}
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 gsettings set org.gnome.desktop.interface icon-theme 'my-icons'
-gsettings get org.gnome.desktop.background picture-uri ~/wallpapers/Sweet-S4.png
+gsettings set org.gnome.desktop.background picture-uri ~/wallpapers/Sweet-S4.png
 
 # Change icon for Outlook PWA
 cp icons/outlook/32.png $HOME/.local/share/icons/hicolor/32x32/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
