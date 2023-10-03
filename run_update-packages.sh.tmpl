@@ -7,20 +7,6 @@ gsettings set org.gnome.nautilus.preferences show-hidden-files true
 gsettings set org.gnome.desktop.interface icon-theme 'my-icons'
 gsettings set org.gnome.desktop.background picture-uri ~/wallpapers/Sweet-S4.png
 
-# Change icon for Outlook PWA
-cp icons/outlook/32.png $HOME/.local/share/icons/hicolor/32x32/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
-cp icons/outlook/48.png $HOME/.local/share/icons/hicolor/48x48/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
-cp icons/outlook/128.png $HOME/.local/share/icons/hicolor/128x128/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
-cp icons/outlook/256.png $HOME/.local/share/icons/hicolor/256x256/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
-cp icons/outlook/512.png $HOME/.local/share/icons/hicolor/512x512/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
-
-# Change icon for Teams PWA
-cp icons/teams/32.png $HOME/.local/share/icons/hicolor/32x32/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
-cp icons/teams/48.png $HOME/.local/share/icons/hicolor/48x48/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
-cp icons/teams/128.png $HOME/.local/share/icons/hicolor/128x128/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
-cp icons/teams/256.png $HOME/.local/share/icons/hicolor/256x256/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
-cp icons/teams/512.png $HOME/.local/share/icons/hicolor/512x512/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
-
 # Update icons
 echo
 read -p "Update icons (y/n)? " -n 1 -r
@@ -28,6 +14,20 @@ echo    # (optional) move to a new line
 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+    # Change icon for Outlook PWA
+    cp icons/outlook/32.png $HOME/.local/share/icons/hicolor/32x32/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
+    cp icons/outlook/48.png $HOME/.local/share/icons/hicolor/48x48/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
+    cp icons/outlook/128.png $HOME/.local/share/icons/hicolor/128x128/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
+    cp icons/outlook/256.png $HOME/.local/share/icons/hicolor/256x256/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
+    cp icons/outlook/512.png $HOME/.local/share/icons/hicolor/512x512/apps/msedge-pkooggnaalmfkidjmlhoelhdllpphaga-Default.png
+
+    # Change icon for Teams PWA
+    cp icons/teams/32.png $HOME/.local/share/icons/hicolor/32x32/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
+    cp icons/teams/48.png $HOME/.local/share/icons/hicolor/48x48/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
+    cp icons/teams/128.png $HOME/.local/share/icons/hicolor/128x128/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
+    cp icons/teams/256.png $HOME/.local/share/icons/hicolor/256x256/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
+    cp icons/teams/512.png $HOME/.local/share/icons/hicolor/512x512/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
+    
     sudo update-icon-caches /usr/share/icons/*
 fi
 {{ end -}}
