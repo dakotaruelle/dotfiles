@@ -5,6 +5,7 @@
 {{ if eq .chezmoi.osRelease.name "Ubuntu" }}
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 gsettings set org.gnome.desktop.interface icon-theme 'my-icons'
+gsettings get org.gnome.desktop.background picture-uri ~/wallpapers/Sweet-S4.png
 {{ end }}
 
 echo
