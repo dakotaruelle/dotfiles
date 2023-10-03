@@ -20,6 +20,16 @@ cp icons/teams/48.png $HOME/.local/share/icons/hicolor/48x48/apps/msedge-cifhbcn
 cp icons/teams/128.png $HOME/.local/share/icons/hicolor/128x128/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
 cp icons/teams/256.png $HOME/.local/share/icons/hicolor/256x256/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
 cp icons/teams/512.png $HOME/.local/share/icons/hicolor/512x512/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png
+
+# Update icons
+echo
+read -p "Update icons (y/n)? " -n 1 -r
+echo    # (optional) move to a new line
+
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sudo update-icon-caches /usr/share/icons/*
+if
 {{ end }}
 
 echo
