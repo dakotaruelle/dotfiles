@@ -20,7 +20,7 @@ export NVM_DIR="$HOME/.nvm"
 ### Aliases ###
 alias list-packages="apt list --installed"
 alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
-alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
+alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
 
 {{ if eq .name "work-computer" }}
 [[ -f ~/.zshrc-work ]] && . ~/.zshrc-work
