@@ -2,7 +2,7 @@
 #!/bin/bash
 
 ### Gnome things ###
-{{ if eq .chezmoi.osRelease.name "Ubuntu" }}
+{{ if eq .chezmoi.osRelease.name "Ubuntu" -}}
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 gsettings set org.gnome.desktop.interface icon-theme 'my-icons'
 gsettings set org.gnome.desktop.background picture-uri ~/wallpapers/Sweet-S4.png
@@ -30,7 +30,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     sudo update-icon-caches /usr/share/icons/*
 if
-{{ end }}
+{{ end -}}
 
 echo
 read -p "Update packages (y/n)? " -n 1 -r
