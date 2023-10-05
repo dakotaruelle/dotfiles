@@ -19,6 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 
 ### Aliases ###
 alias list-packages="apt list --installed"
+alias list-package-sources="ls /etc/apt/sources.list.d"
 {{ if eq .chezmoi.osRelease.name "Ubuntu" }}
 alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
