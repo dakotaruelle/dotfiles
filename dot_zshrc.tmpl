@@ -24,6 +24,8 @@ alias list-packages="apt list --installed"
 alias list-package-sources="ls /etc/apt/sources.list.d"
 alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
+alias git-urb="git checkout master && git pull && git checkout - && git rebase master"
+alias git-urbi="git checkout master && git pull && git checkout - && git rebase --interactive master"
 {{ end }}
 {{ end }}
 
