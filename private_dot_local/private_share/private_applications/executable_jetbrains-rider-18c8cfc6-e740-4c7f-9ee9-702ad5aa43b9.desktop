@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Rider 2024.1.4
+Name=Rider 2024.2.7
 Exec="/home/dakota/.local/share/JetBrains/Toolbox/apps/rider/bin/rider.sh" %u
 Version=1.0
 Type=Application
