@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=DataGrip 2024.2.2
-Exec="/home/dakota/.local/share/JetBrains/Toolbox/apps/datagrip/bin/datagrip.sh" %u
+Exec="/home/dakota/.local/share/JetBrains/Toolbox/apps/datagrip/bin/datagrip" %u
 Version=1.0
 Type=Application
 Categories=Development;IDE;

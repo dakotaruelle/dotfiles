@@ -1,39 +1,32 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 2,
   "blocks": [
     {
       "type": "prompt",
       "alignment": "left",
       "segments": [
         {
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
+          "foreground": "default",
           "type": "os",
           "style": "powerline",
-          "foreground": "default",
           "foreground_templates": [
             "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ],
-          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}"
+          ]
         },
         {
-          "type": "path",
-          "style": "plain",
-          "foreground": "default",
-          "foreground_templates": [
-            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ],
           "properties": {
             "style": "full"
           },
-          "template": " {{ .Path }} "
-        },
-        {
-          "type": "git",
-          "style": "plain",
+          "template": " {{ .Path }} ",
           "foreground": "default",
+          "type": "path",
+          "style": "plain",
           "foreground_templates": [
             "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ],
+          ]
+        },
+        {
           "properties": {
             "branch_icon": "\ue725 ",
             "fetch_stash_count": true,
@@ -41,7 +34,13 @@
             "fetch_upstream_icon": true,
             "fetch_worktree_count": true
           },
-          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+          "foreground": "default",
+          "type": "git",
+          "style": "plain",
+          "foreground_templates": [
+            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
+          ]
         }
       ]
     },
@@ -50,40 +49,41 @@
       "alignment": "right",
       "segments": [
         {
+          "template": " \ue718 {{ .Full }} ",
+          "foreground": "default",
           "type": "node",
           "style": "plain",
-          "foreground": "default",
           "foreground_templates": [
             "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ],
-          "template": " \uE718 {{ .Full }} "
+          ]
         }
       ]
     },
     {
       "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
+          "template": "\ue3bf ",
           "foreground": "default",
+          "type": "root",
+          "style": "plain",
           "foreground_templates": [
             "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ],
-          "style": "plain",
-          "template": "\ue3bf ",
-          "type": "root"
+          ]
         },
         {
+          "template": "> ",
           "foreground": "default",
+          "type": "text",
+          "style": "plain",
           "foreground_templates": [
             "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ],
-          "style": "plain",
-          "template": "> ",
-          "type": "text"
+          ]
         }
-      ]
+      ],
+      "newline": true
     }
-  ]
+  ],
+  "version": 3
 }
