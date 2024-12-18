@@ -10,9 +10,7 @@
           "foreground": "default",
           "type": "os",
           "style": "powerline",
-          "foreground_templates": [
-            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ]
+          "foreground_templates": ["#568af2"]
         },
         {
           "properties": {
@@ -22,9 +20,7 @@
           "foreground": "default",
           "type": "path",
           "style": "plain",
-          "foreground_templates": [
-            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ]
+          "foreground_templates": ["#568af2"]
         },
         {
           "properties": {
@@ -38,9 +34,7 @@
           "foreground": "default",
           "type": "git",
           "style": "plain",
-          "foreground_templates": [
-            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ]
+          "foreground_templates": ["#568af2"]
         }
       ]
     },
@@ -53,9 +47,7 @@
           "foreground": "default",
           "type": "node",
           "style": "plain",
-          "foreground_templates": [
-            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ]
+          "foreground_templates": ["#568af2"]
         }
       ]
     },
@@ -68,18 +60,14 @@
           "foreground": "default",
           "type": "root",
           "style": "plain",
-          "foreground_templates": [
-            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ]
+          "foreground_templates": ["#568af2"]
         },
         {
           "template": "> ",
           "foreground": "default",
           "type": "text",
           "style": "plain",
-          "foreground_templates": [
-            "{{if contains \"vscode\" .Env.TERM_PROGRAM}}#568af2{{end}}{{if contains \"webstorm\" .Env.TERM_PROGRAM}}#568af2{{end}}"
-          ]
+          "foreground_templates": ["#568af2"]
         }
       ],
       "newline": true
