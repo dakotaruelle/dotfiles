@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=DataGrip 2024.3.2
+Name=DataGrip 2024.3.3
 Exec="/home/dakota/.local/share/JetBrains/Toolbox/apps/datagrip/bin/datagrip" %u
 Version=1.0
 Type=Application
