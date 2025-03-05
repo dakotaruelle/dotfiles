@@ -3,19 +3,10 @@ eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.config.json)"
 
 ###   Add to PATH   ###
 export PATH=$HOME/bin:$PATH
-{{ if eq .chezmoi.os "linux" }}
-export PATH=$HOME/.nvm/versions/node/v16.14.2/bin/node:$PATH
-{{ end }}
 
 ### Add ENV variables ###
-export NVM_DIR="$HOME/.nvm"
 
 ### Setup nvm ###
-{{ if eq .chezmoi.os "linux" }}
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-{{ end }}
 
 ### Aliases ###
 {{ if eq .chezmoi.os "linux" }}
@@ -27,7 +18,6 @@ alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer
 alias git-urb="git checkout master && git pull && git checkout - && git rebase master"
 alias git-urbi="git checkout master && git pull && git checkout - && git rebase --interactive master"
 alias git-update="git checkout master && git pull && npm i"
-alias bit-update="git checkout master && git pull && bit import && bit install"
 alias cl="clear"
 alias set-caps="setxkbmap -option ctrl:nocaps"
 
