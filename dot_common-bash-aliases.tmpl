@@ -1,0 +1,17 @@
+alias git-urb="git checkout master && git pull && git checkout - && git rebase master"
+alias git-urbi="git checkout master && git pull && git checkout - && git rebase --interactive master"
+alias git-update="git checkout master 2>/dev/null || git checkout main && git pull && npm i"
+alias git-af="git A && git sq && git pf"
+alias cl="clear"
+
+### Aliases ###
+{{ if eq .chezmoi.os "linux" }}
+{{ if eq .chezmoi.osRelease.name "Ubuntu" }}
+alias list-packages="apt list --installed"
+alias list-package-sources="ls /etc/apt/sources.list.d"
+alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
+alias set-caps="setxkbmap -option ctrl:nocaps"
+
+{{ end }}
+{{ end }}

@@ -1,25 +1,12 @@
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(oh-my-posh init zsh)"
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.config.json)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-###   Add to PATH   ###
-export PATH=$HOME/bin:$PATH
+# Source common setup commands between shells
+. ~/.common-setup-commands
 
-### Aliases ###
-{{ if eq .chezmoi.os "linux" }}
-{{ if eq .chezmoi.osRelease.name "Ubuntu" }}
-alias list-packages="apt list --installed"
-alias list-package-sources="ls /etc/apt/sources.list.d"
-alias dark-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
-alias light-mode="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
-alias set-caps="setxkbmap -option ctrl:nocaps"
-
-{{ end }}
-{{ end }}
-
-# Source common bash aliases
-if [ -f ~/.common-bash-aliases ]; then
-    . ~/.common-bash-aliases
-fi
+# Source aliases between shells
+. ~/.common-bash-aliases
 
 # Source any local machine commands/setup
 if [ -f ~/.zshrc-local-setup ]; then
