@@ -9,5 +9,6 @@ AppData
 .local/share/applications/jetbrains-toolbox.desktop
 .local/share/applications/jetbrains-webstorm.desktop
 .zshrc
+.zprofile
 {{ end }}
 
