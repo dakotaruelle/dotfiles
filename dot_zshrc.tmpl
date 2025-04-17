@@ -16,8 +16,15 @@ alias set-caps="setxkbmap -option ctrl:nocaps"
 {{ end }}
 {{ end }}
 
-. ~/.common-bash-aliases
-[[ -f ~/.zshrc-local-setup ]] && . ~/.zshrc-local-setup
+# Source common bash aliases
+if [ -f ~/.common-bash-aliases ]; then
+    . ~/.common-bash-aliases
+fi
+
+# Source any local machine commands/setup
+if [ -f ~/.zshrc-local-setup ]; then
+    . ~/.zshrc-local-setup
+fi
 
 ### Register zsh completions ###
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
