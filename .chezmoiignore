@@ -3,6 +3,7 @@ README.md
 {{ if ne .chezmoi.os "windows" -}}
 winget-packages.json
 AppData
+run_update-script-windows.ps1
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" -}}
@@ -10,5 +11,6 @@ AppData
 .local/share/applications/jetbrains-webstorm.desktop
 .zshrc
 .zprofile
+run_update-script-linux.sh
 {{ end }}
 
