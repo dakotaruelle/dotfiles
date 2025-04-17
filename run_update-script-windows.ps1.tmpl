@@ -2,7 +2,7 @@ Write-Host
 $confirmation = Read-Host "Update packages (y/n)?"
 
 if ($confirmation -match '^[Yy]$') {
-    # Update packages
+    Write-Host "`n`n   ---Updating all winget packages---   `n`n"
 
-    Write-Host "`n`n   ---Updating all homebrew packages---   `n`n"
+    winget upgrade --all
 }
