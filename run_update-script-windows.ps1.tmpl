@@ -1,3 +1,5 @@
+{{ if eq .chezmoi.os "windows" -}}
+
 Write-Host
 Write-Host "Update packages (y/n)?"
 $confirmation = [System.Console]::ReadKey($true).KeyChar
@@ -23,3 +25,5 @@ if ($confirmation -match '^[Yy]$') {
         Write-Host "`nOperation canceled by the user."
     }
 }
+
+{{ end -}}
