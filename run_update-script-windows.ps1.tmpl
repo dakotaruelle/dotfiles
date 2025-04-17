@@ -1,5 +1,7 @@
 Write-Host
-$confirmation = Read-Host "Update packages (y/n)?"
+Write-Host "Update packages (y/n)?"
+$confirmation = [System.Console]::ReadKey($true).KeyChar
+Write-Host  # Move to a new line after input
 
 if ($confirmation -match '^[Yy]$') {
     Write-Host "`n`n   ---Updating all winget packages---   `n`n"
