@@ -4,7 +4,22 @@ $confirmation = [System.Console]::ReadKey($true).KeyChar
 Write-Host  # Move to a new line after input
 
 if ($confirmation -match '^[Yy]$') {
-    Write-Host "`n`n   ---Updating all winget packages---   `n`n"
+    Write-Host "`n`n   ---Checking available winget package upgrades---   `n`n"
 
-    winget upgrade --all
+    # Capture and display the output of winget upgrade
+    $wingetOutput = winget upgrade
+    Write-Host $wingetOutput
+
+    # Ask the user if they want to proceed with upgrading
+    Write-Host
+    Write-Host "Would you like to proceed with upgrading all packages (y/n)?"
+    $proceedConfirmation = [System.Console]::ReadKey($true).KeyChar
+    Write-Host  # Move to a new line after input
+
+    if ($proceedConfirmation -match '^[Yy]$') {
+        Write-Host "`n`n   ---Upgrading all winget packages---   `n`n"
+        winget upgrade --all
+    } else {
+        Write-Host "`nOperation canceled by the user."
+    }
 }
