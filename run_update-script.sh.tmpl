@@ -37,3 +37,14 @@ then
 fi
 
 {{ end -}}
+
+{{ if eq .chezmoi.os "windows" -}}
+echo
+read -p "Update packages (y/n)? " -n 1 -r
+echo    
+
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    echo hello
+fi
+{{ end -}}
