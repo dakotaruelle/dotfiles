@@ -4,10 +4,6 @@ eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.config.json)"
 ###   Add to PATH   ###
 export PATH=$HOME/bin:$PATH
 
-### Add ENV variables ###
-
-### Setup nvm ###
-
 ### Aliases ###
 {{ if eq .chezmoi.os "linux" }}
 {{ if eq .chezmoi.osRelease.name "Ubuntu" }}
@@ -25,9 +21,7 @@ alias set-caps="setxkbmap -option ctrl:nocaps"
 {{ end }}
 {{ end }}
 
-{{ if eq .name "work-computer" }}
-[[ -f ~/.zshrc-work ]] && . ~/.zshrc-work
-{{ end }}
+[[ -f ~/.zshrc-local-setup ]] && . ~/.zshrc-local-setup
 
 ### Register zsh completions ###
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
