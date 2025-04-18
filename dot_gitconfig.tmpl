@@ -1,8 +1,8 @@
 [user]
 	name = Dakota Ruelle
 [core]
-{{ if (and (eq .chezmoi.os "linux") (eq .name "work-computer")) }}
-  editor = code --wait
+{{ if (and (eq .chezmoi.os "linux") (eq .name "work-computer-zbook")) }}
+  editor = webstorm --wait
 {{ else }}
   editor = code --wait
 {{ end }}
