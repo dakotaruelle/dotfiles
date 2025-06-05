@@ -1,8 +1,18 @@
-alias git-urb="git checkout master && git pull && git checkout - && git rebase master"
-alias git-urbi="git checkout master && git pull && git checkout - && git rebase --interactive master"
-alias git-update="git checkout master 2>/dev/null || git checkout main && git pull && npm i"
-alias git-af="git A && git sq && git pf"
-alias cl="clear"
+git-default-branch() {
+  git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+}
+
+git-urb() {
+  git checkout "$(git-default-branch)" && git pull && git checkout - && git rebase "$(git-default-branch)"
+}
+
+git-urbi() {
+  git checkout "$(git-default-branch)" && git pull && git checkout - && git rebase --interactive "$(git-default-branch)"
+}
+
+git-update() {
+  git checkout "$(git-default-branch)" && git pull && npm i
+}
 
 ### Aliases ###
 {{ if eq .chezmoi.os "linux" }}
@@ -15,3 +25,5 @@ alias set-caps="setxkbmap -option ctrl:nocaps"
 
 {{ end }}
 {{ end }}
+alias git-af="git A && git sq && git pf"
+alias cl="clear"
