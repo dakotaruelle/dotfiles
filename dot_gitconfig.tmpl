@@ -2,7 +2,7 @@
 	name = Dakota Ruelle
 [core]
 {{ if (and (eq .chezmoi.os "linux") (eq .name "work-computer-zbook")) }}
-  editor = webstorm --wait
+  editor = code --wait
 {{ else }}
   editor = code --wait
 {{ end }}
