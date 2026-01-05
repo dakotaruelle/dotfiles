@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=WebStorm 2025.3
+Name=WebStorm 2025.3.1
 Exec="/home/dakota/.local/share/JetBrains/Toolbox/apps/webstorm-2/bin/webstorm" %u
 Version=1.0
 Type=Application
