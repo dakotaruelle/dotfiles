@@ -1,4 +1,6 @@
+{{ if eq .chezmoi.os "linux" }}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{ end }}
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.config.json)"
 
 # Source common setup commands between shells
