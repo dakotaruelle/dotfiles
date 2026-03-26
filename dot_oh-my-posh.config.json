@@ -42,11 +42,17 @@
       "alignment": "right",
       "segments": [
         {
-          "template": " \ue718 {{ .Full }} ",
-          "foreground": "default",
           "type": "node",
           "style": "plain",
-          "foreground_templates": ["#568af2"]
+          "foreground": "default",
+          "foreground_templates": ["#568af2"],
+          "template": "  {{ .Full }} "
+        },
+        {
+          "type": "bun",
+          "style": "plain",
+          "foreground": "#3C82F6",
+          "template": "  {{ .Full }} "
         }
       ]
     },
