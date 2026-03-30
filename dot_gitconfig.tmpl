@@ -25,6 +25,7 @@
   rsh = reset --hard
   undo = reset --hard HEAD^
   del = branch -D
+  aqp = !git A && git sq && git pf
 [pull]
 	rebase = true
 [push]
