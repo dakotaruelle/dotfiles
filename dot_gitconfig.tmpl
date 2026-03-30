@@ -14,6 +14,8 @@
   s = status
   A = add --all
   c = commit --message
+  cp = !git c $1 && git push
+  acp = "!f() { git add --all && git commit --message \"$1\" && git push; }; f"
   sq = commit --amend --no-edit
   amend = commit --amend
   rb = rebase
@@ -25,7 +27,7 @@
   rsh = reset --hard
   undo = reset --hard HEAD^
   del = branch -D
-  aqp = !git A && git sq && git pf
+  asp = !git A && git sq && git pf
 [pull]
 	rebase = true
 [push]
