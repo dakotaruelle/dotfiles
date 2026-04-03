@@ -104,8 +104,34 @@ background-image = /home/dakota/Pictures/Wallpapers/slate.jpg
 background-image-fit = cover
 font-family = "JetBrainsMono NF"
 
+# Reload configuration
+
+keybind = ctrl+shift+,=reload_config
+
+# Create new split down
+
+keybind = ctrl+shift+arrow_down=new_split:down
+
+# Go to previous split
+
 keybind = ctrl+shift+page_up=goto_split:previous
+
+# Go to next split
+
 keybind = ctrl+shift+page_down=goto_split:next
+
+# New tab
+
 keybind = ctrl+t=new_tab
+
+# Close tab
+
 keybind = ctrl+w=close_tab
+
+# Close split
+
+keybind = ctrl+shift+w=close_surface
+
+# Paste
+
 keybind = ctrl+v=paste_from_clipboard
