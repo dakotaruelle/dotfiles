@@ -94,29 +94,44 @@
 
 # resize-overlay-duration = 4s 200ms
 
-theme = Ayu
+theme = dark:Ayu,light:Catppuccin Latte
 window-titlebar-background = #11151C
 window-titlebar-foreground = #11151C
 gtk-titlebar-style = tabs
 gtk-wide-tabs = false
 faint-opacity = 0.7
-background-image = /home/dakota/Pictures/Wallpapers/slate.jpg
+#background-image = /home/dakota/Pictures/Wallpapers/slate.jpg
 background-image-fit = cover
 font-family = "JetBrainsMono NF"
 
 # Reload configuration
+
 keybind = ctrl+shift+,=reload_config
+
 # Create new split down
+
 keybind = ctrl+shift+arrow_down=new_split:down
+
 # Go to previous split
+
 keybind = ctrl+shift+page_up=goto_split:previous
+
 # Go to next split
+
 keybind = ctrl+shift+page_down=goto_split:next
+
 # New tab
+
 keybind = ctrl+t=new_tab
+
 # Close tab
+
 keybind = ctrl+w=close_tab
+
 # Close split
+
 keybind = ctrl+shift+w=close_surface
+
 # Paste
+
 keybind = ctrl+v=paste_from_clipboard
