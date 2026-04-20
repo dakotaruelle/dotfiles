@@ -29,6 +29,8 @@
   undo = reset --hard HEAD^
   del = branch -D
   asp = !git A && git sq && git pf
+  wtl = worktree list
+  wta = "!f() { git worktree add \"../worktrees/$1\" -b \"dr/$1\"; }; f"
 [pull]
 	rebase = true
 [push]
