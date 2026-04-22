@@ -1,13 +1,6 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
-### Gnome things ###
-{{ if eq .chezmoi.osRelease.name "Ubuntu" -}}
-
-gsettings set org.gnome.nautilus.preferences show-hidden-files true
-
-{{ end -}}
-
 ## Run any local machine updates
 if [ -f ~/local-chezmoi-update.sh ]; then
     . ~/local-chezmoi-update.sh
