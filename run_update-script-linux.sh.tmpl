@@ -29,4 +29,10 @@ then
     brew upgrade
 fi
 
+{{ if eq .chezmoi.osRelease.name "Ubuntu" -}}
+# set power mode to performance
+sudo cpupower frequency-set -g performance
 {{ end -}}
+
+{{ end -}}
+
